@@ -20,7 +20,7 @@ public class Basket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Get current screen pos od mouse from Input
+        //Get current screen pos of mouse from Input
         Vector3 mousePos2D = Input.mousePosition;
         //Camera's z pos sets how far to push mouse into 3D
         mousePos2D.z =  -Camera.main.transform.position.z;
