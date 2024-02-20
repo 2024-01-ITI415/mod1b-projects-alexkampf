@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Rigidbody rb { get; set; }
+
+    public float speed = 500f;
+
+    private void awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     void Start()
     {
-        
+        Invoke(nameof(SetRandomTrajectory), 1f);
     }
 
     // Update is called once per frame
-    void Update()
+    void SetRandomTrajectory()
     {
-        
+        Vector2 force = Vector2.zero;
+        force.x = Random.Range(-1f, 1f);
+        force.y = -1;
+
+        rb.AddForce(force.normalized * speed);
     }
 }
