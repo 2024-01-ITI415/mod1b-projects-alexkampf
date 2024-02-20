@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
 
     public float speed = 500f;
 
-    private void awake()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -20,8 +20,8 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void SetRandomTrajectory()
     {
-        Vector2 force = Vector2.zero;
-        force.x = Random.Range(-1f, 1f);
+        Vector3 force = Vector3.zero;
+        force.x = Random.Range(-0.5f, 0.5f);
         force.y = -1;
 
         rb.AddForce(force.normalized * speed);
