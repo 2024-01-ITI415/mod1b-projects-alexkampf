@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class Paddle : MonoBehaviour
 {
-    [Header("Set Dynamically")]
-    public Text scoreGT;
+    //[Header("Set Dynamically")]
+    //public Text scoreGT;
 
-    private void Start()
-    {
-        //Find reference to ScoreCounter GameObject
-        GameObject scoreGO = GameObject.Find("ScoreCounter");
-        //Get text component
-        scoreGT = scoreGO.GetComponent<Text>();
-        //set starting points to 0
-        scoreGT.text = "0";
-    }
-    // Update is called once per frame
+    //private void Start()
+    //{
+    ////    //Find reference to ScoreCounter GameObject
+    ////    //GameObject scoreGO = GameObject.Find("ScoreCounter");
+    ////    //Get text component
+    ////    scoreGT = scoreGO.GetComponent<Text>();
+    ////    //set starting points to 0
+    ////    scoreGT.text = "0";
+    ////}
+    //// Update is called once per frame
     void Update()
     {
         //Get current screen pos of mouse from Input
@@ -32,26 +32,26 @@ public class Paddle : MonoBehaviour
         this.transform.position = pos;
     }
 
-    private void OnCollisionEnter(Collision coll)
-    {
-        //Find out what hit this basket
-        GameObject collidedWith = coll.gameObject;
-        if (collidedWith.tag == "Apple")
-        {
-            Destroy(collidedWith);
-        }
+    ////private void OnCollisionEnter(Collision coll)
+    ////{
+    ////    //Find out what hit this basket
+    ////    GameObject collidedWith = coll.gameObject;
+    ////    if (collidedWith.tag == "Apple")
+    ////    {
+    ////        Destroy(collidedWith);
+    ////    }
 
-        //Parse text of scoreGT to Int
-        int score = int.Parse(scoreGT.text);
-        //add points for each collided apple
-        score += 100;
-        //convert score back to string and display
-        scoreGT.text = score.ToString();
+    //    //Parse text of scoreGT to Int
+    //    int score = int.Parse(scoreGT.text);
+    //    //add points for each collided apple
+    //    score += 100;
+    //    //convert score back to string and display
+    //    scoreGT.text = score.ToString();
 
-        //track high score
-        if (score > HighScore.score)
-        {
-            HighScore.score = score;
-        }
-    }
+    //    //track high score
+    //    if (score > HighScore.score)
+    //    {
+    //        HighScore.score = score;
+    //    }
+    //}
 }
