@@ -1,2 +1,5 @@
 # Module1-Projects
  ApplePicker, Mission Demolition and Prototype 1
+
+Prototype 1- BREAKOUT
+My goal with this project was to use what I have learned and made with the previous two projects to recreate BreakOut. Code was reused/tweaked from Slingshot.cs, ApplePicker.cs, and Basket.cs. Slingshot.cs was used when created ProjectileInitializer.cs to apply force to the projectile, ApplePicker.cs was used in GameResetter.cs to reset the scene, and Basket.cs was used in Paddle.cs to move the Paddle. Materials and prefabs were tweaked as well for the game assets, such as slabs, baskets, and projectiles. The underlying design of the game was mostly influenced by the MDA framework, as it fits best for a simple game with nothing that can really be considered dramatic elements. Things like the size of the bricks, ball, and the force initially exerted on it heavily influenced the dynamics and were constantly tweaked throughout the project's creation.
